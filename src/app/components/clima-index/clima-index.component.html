@@ -1,0 +1,35 @@
+<!-- index.component.html -->
+<app-ciudad-index (valorAEnviar)='RecibirValor($event)'></app-ciudad-index>
+<div style="height: 10px;"></div>
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <td>Ciudad</td>
+                <td>Temperatura</td>
+                <td>Humedad</td>
+                <td>Temp. Max.</td>
+                <td>Temp. Min.</td>
+                <td>% Nubes</td>
+                
+            </tr>
+            </thead>
+          
+            <tbody>
+                <tr *ngFor="let dclima of datosClima">
+                    <td>{{ dclima.name }}</td>
+                    <td>{{ dclima.main.temp }}</td>
+                    <td>{{ dclima.main.humidity }}</td>
+                    <td>{{ dclima.main.temp_max }}</td>
+                    <td>{{ dclima.main.temp_min }}</td>
+                    <td>{{ dclima.clouds.all }}</td>
+                    
+                </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+
